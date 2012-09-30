@@ -45,6 +45,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    high_voltage (1.2.0)
     hike (1.2.1)
     httparty (0.8.3)
       multi_json (~> 1.0)
@@ -118,6 +119,7 @@ DEPENDENCIES
   bootstrap-sass-rails (~> 2.1.0.0)
   bootswatch-rails
   coffee-rails (~> 3.2.1)
+  high_voltage
   httparty
   jquery-rails
   multi_json

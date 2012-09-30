@@ -8,9 +8,10 @@ module ApplicationHelper
 		elsif @temp_diff > 5
 			"red"
 		end
-	ends
+              end
+	def flash
 		if @preicp > 50
-			true
-		end
+			"flash"
+              end
 	end
 end
