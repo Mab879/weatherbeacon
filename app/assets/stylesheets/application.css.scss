@@ -56,11 +56,11 @@ input {
 .flash {
         -webkit-animation-name: blink;  
         -webkit-animation-iteration-count: infinite;  
-        -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
-        -webkit-animation-duration: 1.5s; 
+        -webkit-animation-duration: 3s; 
+        -webkit-animation-timing-function: cubic-bezier(1.0,1.0,0,1.0);
         -moz-animation-name: blink;
         -moz-animation-iteration-count: infinite;  
-        -moz-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+        -moz-animation-timing-function: cubic-bezier(1.0,1.0,0,1.0);
         -moz-animation-duration: 1.5s;
             }
 
