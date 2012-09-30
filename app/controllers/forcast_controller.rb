@@ -4,7 +4,7 @@ class ForcastController < ApplicationController
   end
 
   def redirect_to_forcast
-    redirect_to display_url(:zip_code => params[:zip_code])
+    redirect_to forecast_url(:zip_code => params[:zip_code])
   end
   def display
   

@@ -5,6 +5,12 @@ WeatherBeacon::Application.routes.draw do
 
   post "forcast/display"
 
+  post "/forecast", to: "forcast#display"
+
+  match '/forecast/', to: "forcast#start"
+
+  match 'forecast/:zip_code', to: 'forcast#display'
+
   root to: 'forcast#start'
 
   # The priority is based upon order of creation:
