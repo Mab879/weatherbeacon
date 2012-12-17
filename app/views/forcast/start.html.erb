@@ -1,5 +1,8 @@
 <h1>Enter Your Zip Code</h1>
-<%= form_tag('/forecast') do %>
-  <%= text_field_tag "zip_code" %>
+<%= form_tag('/forecast', class: 'form-inline') do %>
+  <div class="control-group">
+  <%= text_field_tag "zip_code", nil, class: 'required', minlength: "5", maxlength: '5',  placeholder: '50242' %>
+  <br />
+</div>
   <%= submit_tag "Light It Up", class: 'btn btn-primary btn-large' %>
 <% end %>
