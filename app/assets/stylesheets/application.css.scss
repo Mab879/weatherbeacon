@@ -11,10 +11,15 @@
  *= require_self
  *= require_tree .
  */
-@import "bootswatch/cerulean/variables";
+@import "bootswatch/united/variables";
 @import "twitter/bootstrap";
-body { padding: 60px; min-height:100%; }
-@import "bootswatch/cerulean/bootswatch";
+body { 
+  padding: 60px; 
+  min-height:100%; 
+  background-image: asset-url('creampaper.png', image)
+}
+@import "bootswatch/united/bootswatch";
+
 .error {
   color:$red;
   display:inline;
