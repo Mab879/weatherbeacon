@@ -35,12 +35,14 @@
   </div>
   <div class="modal-body">
     <p>To Explain the colors here is a rhyeme:</p>
-    <p>"Weather Beacon <span style='color: red;'>red</span>, warmer weather is ahead.</p>
-    <p>Weather Beacon white, colder weather is in sight.</p>
-    <p>Weather Beacon <span style='color:green;'>green</span>, no change in temperature foreseen.</p>
-    <p>Weather Beacon flashing night or day, precipitation is on the way"</p>
-    <p></p>
-    <p>Thanks to KCCI, Des Moines, for the rhyme.</p>
+    <blockquote>
+      <p>"Weather Beacon <span style='color: red;'>red</span>, warmer weather is ahead.</p>
+      <p>Weather Beacon white, colder weather is in sight.</p>
+      <p>Weather Beacon <span style='color:green;'>green</span>, no change in temperature foreseen.</p>
+      <p>Weather Beacon flashing night or day, precipitation is on the way"</p>
+      <p></p>
+    </blockquote>
+    <p>Thanks to <%= link_to "KCCI, Des Moines", 'http://kcci.com', target: '_blank' %>, for the rhyme.</p>
     <p>Weather Infomation is provided by: <%= link_to "wunderground.com", "http://www.wunderground.com" %></p>
   </div>
   <div class="modal-footer">

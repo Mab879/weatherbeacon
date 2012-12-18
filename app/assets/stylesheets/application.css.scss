@@ -13,9 +13,9 @@
  */
 @import "bootswatch/united/variables";
 @import "twitter/bootstrap";
-body { 
-  padding: 60px; 
-  min-height:100%; 
+body {
+  padding: 60px;
+  min-height:100%;
   background-image: asset-url('creampaper.png', image)
 }
 @import "bootswatch/united/bootswatch";
@@ -60,9 +60,11 @@ input {
   text-decoration:blink;
 }
 
-@-webkit-keyframes blink {  
-    from { opacity: 1.0; }
-      to { opacity: 0.0; }
+@-webkit-keyframes blink {
+    0% { opacity: 0.0; }
+    50% { opacity: 1.0; }
+    100% { opacity: 0.0}
+
 }
 @-moz-keyframes blink {
   0% { opacity: 1.0; }
@@ -71,11 +73,11 @@ input {
  100% { opacity: 0.0; }
 }
 .flash {
-  -webkit-animation-name: blink;  
-  -webkit-animation-iteration-count: infinite;  
-  -webkit-animation-duration: 1s; 
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 4s;
   -moz-animation-name: blink;
-  -moz-animation-iteration-count: infinite;  
-  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 4s;
   }
 

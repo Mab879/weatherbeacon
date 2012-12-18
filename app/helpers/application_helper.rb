@@ -3,9 +3,9 @@ module ApplicationHelper
 		@temp_diff = (@todays_high.to_i - @next_day_high.to_i)
 		if (-5..5).include?(@temp_diff)
 			"green"
-		elsif @temp_diff < -5
+		elsif @todays_high.to_i < @next_day_high.to_i
 			"white"
-		elsif @temp_diff > 5
+		elsif @todays_high.to_i > @next_day_high.to_i
 			"red"
 		end
               end
