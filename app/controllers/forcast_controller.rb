@@ -17,6 +17,15 @@ class ForcastController < ApplicationController
     @forecast = JSON.parse(@forecast_resp)
     @todays_high = @forecast["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"]
     @next_day_high = @forecast["forecast"]["simpleforecast"]["forecastday"][1]["high"]["fahrenheit"]
-    @preicp = @forecast["forecast"]["simpleforecast"]["forecastday"][1]["pop"]
+    @today_day_preicp = @forecast["forecast"]["simpleforecast"]["forecastday"][0]["pop"]
+    @next_day_preicp = @forecast["forecast"]["simpleforecast"]["forecastday"][1]["pop"]
+    @preicp = calc_mean(@today_day_preicp, @next_day_preicp)
+  end
+  
+  private
+  
+  def calc_mean(val1, val2)
+    total = val1 + val2
+    total / 2
   end
 end
