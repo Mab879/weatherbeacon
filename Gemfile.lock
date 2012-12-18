@@ -45,6 +45,12 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     high_voltage (1.2.0)
     hike (1.2.1)
     httparty (0.8.3)
@@ -122,6 +128,7 @@ DEPENDENCIES
   bootstrap-sass-rails (~> 2.1.0.0)
   bootswatch-rails
   coffee-rails (~> 3.2.1)
+  haml-rails
   high_voltage
   httparty
   jquery-rails

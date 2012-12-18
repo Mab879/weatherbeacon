@@ -27,6 +27,7 @@ gem 'httparty'
 gem 'multi_json'
 gem 'high_voltage'
 gem 'rails-footnotes', '>= 3.7.5.rc4', :group => :development
+gem 'haml-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
