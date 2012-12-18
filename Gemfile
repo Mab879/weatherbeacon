@@ -22,6 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'font-awesome-rails', '0.3.0'
 gem 'jquery-rails'
 gem 'httparty'
 gem 'multi_json'

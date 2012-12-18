@@ -1,3 +1,30 @@
-<h1>This forcast for: <%= @city["current_observation"]["display_location"]["full"] %></h1>
+<div class="btn-group">
+	<%= link_to raw("<i class=\"icon-circle-arrow-left\" style=\"font-size:20px;\"></i> Enter Another Zip Code"), root_url, class: 'btn btn-primary' %>
+	<a class="btn btn-info" data-toggle="modal" href="#myModal" role="button"><i class="icon-question-sign" style="font-size: 20px;"></i> What Do the Colors Mean?</a>
+</div
+<div class="row-fluid">
+	<div class="span5">
+		<h1>This forcast for: <%= @city["current_observation"]["display_location"]["full"] %></h1>
 
-<div class="tower <%= find_color %> <%= flash %>"></div>
+		<div class="tower <%= find_color %> <%= flash %>"></div>
+	</div>
+	<div class="span7 pull-right">
+			<%= link_to raw("<h2>Full Forecast</h2>"), "http://www.wunderground.com/cgi-bin/findweather/getForecast?query=#{params[:zip_code]}" , target: '_blank' %>
+			<img src="<%= @forecast["forecast"]["simpleforecast"]["forecastday"][0]["icon_url"]%>" />
+			<h4>Today's High</h4>
+			<h5><%= @forecast["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"] %> &deg; F</h5>
+
+			<h4>Today's Low</h4>
+			<h5><%= @forecast["forecast"]["simpleforecast"]["forecastday"][0]["low"]["fahrenheit"] %> &deg; F</h5>
+
+
+			<br>
+			<img src="<%= @forecast["forecast"]["simpleforecast"]["forecastday"][1]["icon_url"]%>" />
+			<h4>Tomorrow's High</h4>
+			<h5><%= @forecast["forecast"]["simpleforecast"]["forecastday"][1]["high"]["fahrenheit"] %> &deg; F</h5>
+
+			<h4>Tomorrow's Low</h4>
+			<h5><%= @forecast["forecast"]["simpleforecast"]["forecastday"][1]["low"]["fahrenheit"] %> &deg; F</h5>
+
+	</div>
+</div>

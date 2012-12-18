@@ -10,9 +10,11 @@
  *
  *= require_self
  *= require_tree .
+ *= require 'font-awesome'
  */
 @import "bootswatch/united/variables";
 @import "twitter/bootstrap";
+@import "twitter/bootstrap-no-sprites";
 body {
   padding: 60px;
   min-height:100%;
