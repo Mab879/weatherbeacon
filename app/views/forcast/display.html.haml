@@ -1,0 +1,47 @@
+.btn-group
+  = link_to raw("<i class=\"icon-circle-arrow-left\" style=\"font-size:20px;\"></i> Enter Another Zip Code"), root_url, class: 'btn btn-primary'
+  %a.btn.btn-info{"data-toggle" => "modal", :href => "#myModal", :role => "button"}
+    %i.icon-question-sign{:style => "font-size: 20px;"}
+    What Do the Colors Mean?
+- @alerts.each_with_index do |alert, index|
+  :javascript
+    $("warningModal#{index}").modal();
+  .alert.alert-warning
+    %h2
+      A #{@alerts[index]["description"]} is in affect to
+      \#{DateTime.strptime(@alerts[index]["dateTimeExpires"].to_s,'%s').stamp("Today at 3:00")} local time
+    %a.btn.btn-info{"data-toggle" => "modal", :href => "#warningModal#{index}", :role => "button"} Read More
+  .modal.hide.fade.myModal{:id => "warningModal#{index}"}
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3{:style => "color: black;"} More infomation
+    .modal-body
+      =   simple_format @alerts[index]["message"]
+    .modal-footer
+      %a.btn{:href => "#", "aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} Close
+.row-fluid
+  .span5
+    %h1
+      This forcast for: #{@city["current_observation"]["display_location"]["full"]}
+    %div{:class => "tower #{find_color} #{flash}"}
+  .span7.pull-right
+    = link_to raw("<h2>Full Forecast</h2>"), "http://www.wunderground.com/cgi-bin/findweather/getForecast?query=#{params[:zip_code]}" , target: '_blank'
+    %img{:src => @forecast["forecast"]["simpleforecast"]["forecastday"][0]["icon_url"]}/
+    %h4 Today's High
+    %h5
+      = @forecast["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"]
+      \° F
+    %h4 Today's Low
+    %h5
+      = @forecast["forecast"]["simpleforecast"]["forecastday"][0]["low"]["fahrenheit"]
+      \° F
+    %br
+      %img{:src => @forecast["forecast"]["simpleforecast"]["forecastday"][1]["icon_url"]}/
+      %h4 Tomorrow's High
+      %h5
+        = @forecast["forecast"]["simpleforecast"]["forecastday"][1]["high"]["fahrenheit"]
+        \° F
+      %h4 Tomorrow's Low
+      %h5
+        = @forecast["forecast"]["simpleforecast"]["forecastday"][1]["low"]["fahrenheit"]
+        \° F
