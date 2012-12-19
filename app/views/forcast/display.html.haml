@@ -10,8 +10,8 @@
     $("warningModal#{index}").modal();
   .alert.alert-warning
     %h3
-      A #{@alerts[index]["description"]} is in affect to
-      \#{DateTime.strptime(@alerts[index]["dateTimeExpires"].to_s,'%s').stamp("Today at 3:00")} local time
+      A #{@alerts[index]["description"]} is in affect until
+      \#{DateTime.strptime(@alerts[index]["dateTimeExpires"].to_s,'%s').stamp("Monday at 3:00 PM")} local time.
     %a.btn.btn-info{"data-toggle" => "modal", :href => "#warningModal#{index}", :role => "button"} Read More
   .modal.hide.fade.myModal{:id => "warningModal#{index}"}
     .modal-header
