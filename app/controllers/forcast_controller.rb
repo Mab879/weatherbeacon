@@ -6,6 +6,7 @@ class ForcastController < ApplicationController
   def redirect_to_forcast
     redirect_to forecast_url(:zip_code => params[:zip_code])
   end
+
   def display
 
 
@@ -29,7 +30,8 @@ class ForcastController < ApplicationController
   private
 
   def calc_mean(val1, val2)
-    total = val1 + val2
-    total / 2
+    if val1 > 50 || val2 > 50
+      100
+    end
   end
 end
