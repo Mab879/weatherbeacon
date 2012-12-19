@@ -8,7 +8,7 @@
 - @alerts.each_with_index do |alert, index|
   :javascript
     $("warningModal#{index}").modal();
-  .alert.alert-warning
+  .alert.alert-error
     %h3
       A #{@alerts[index]["description"]} is in affect until
       \#{DateTime.strptime(@alerts[index]["dateTimeExpires"].to_s,'%s').stamp("Monday at 3:00 PM")} local time.
