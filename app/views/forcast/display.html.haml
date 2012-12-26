@@ -16,7 +16,7 @@
   .modal.hide.fade.myModal{:id => "warningModal#{index}"}
     .modal-header
       %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-      %h3{:style => "color: black;"} More infomation
+      %h3{:style => "color: black;"} More Infomation about the #{@alerts[index]["description"]}
     .modal-body
       =   simple_format @alerts[index]["message"]
     .modal-footer
