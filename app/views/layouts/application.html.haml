@@ -1,0 +1,77 @@
+!!!
+%html
+  %head
+    %title WeatherBeacon
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %script{:src => "http://jzaefferer.github.com/jquery-validation/jquery.validate.js", :type => "text/javascript"}
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "/"} Weather Beacon
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{:href => "/"} Home
+              %li= link_to "About", '#'
+    = yield
+    #myModal.modal.hide.fade
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        %h3{:style => "color: black;"} What Do the Colors Mean?
+      .modal-body
+        %p To Explain the colors here is a rhyeme:
+        %blockquote
+          %p
+            Weather Beacon
+            = succeed "," do
+              %b
+                %span{:style => "color: red;"} red
+            warmer weather is ahead.
+          %p
+            Weather Beacon
+            = succeed "," do
+              %b white
+            colder weather is in sight.
+          %p
+            Weather Beacon
+            = succeed "," do
+              %b
+                %span{:style => "color:green;"} green
+            no change in temperature foreseen.
+          %p
+            Weather Beacon
+            %b
+              %span.flash flashing
+            night or day, precipitation is on the way
+          %p
+        %p
+          Thanks to #{link_to "KCCI, Des Moines", 'http://kcci.com', target: '_blank'}, for the rhyme.
+        %p
+          In case you need some video reminders about it here are some:
+        %p
+          Rocking the Full '80's look #{link_to "here is the rhyme on video", "http://www.youtube.com/watch?v=7P3vRWWFaD0"}.
+        %p
+          Weather Infomation is provided by: #{link_to "wunderground.com", "http://www.wunderground.com"}
+      .modal-footer
+        %a.btn.btn-primary{"aria-hidden" => "true", "data-dismiss" => "modal", :href => "#"} Close
+  :javascript
+    var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35144765-1']);
+      _gaq.push(['_setDomainName', 'herokuapp.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+                   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                             })();
+
+  :javascript
+    $("form").validate();
