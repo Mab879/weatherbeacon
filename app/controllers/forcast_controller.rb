@@ -32,6 +32,8 @@ class ForcastController < ApplicationController
   def calc_mean(val1, val2)
     if val1 > 50 || val2 > 50
       100
+    else
+      0
     end
   end
 end

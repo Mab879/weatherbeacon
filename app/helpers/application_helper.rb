@@ -12,6 +12,6 @@ module ApplicationHelper
 	def flash
 		if @preicp > 50
 			"flash"
-              end
+     end
 	end
 end

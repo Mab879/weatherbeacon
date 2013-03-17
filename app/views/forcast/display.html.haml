@@ -26,7 +26,7 @@
   .span5
     %h1
       This forcast for: #{@city["current_observation"]["display_location"]["full"]}
-    %div{:class => "tower #{find_color} #{flash}"}
+    %div{class: "tower #{find_color} #{flash}"}
   .span7.pull-right
     = link_to raw("<h2>Full Forecast</h2>"), "http://www.wunderground.com/cgi-bin/findweather/getForecast?query=#{params[:zip_code]}" , target: '_blank'
     %img{:src => @forecast["forecast"]["simpleforecast"]["forecastday"][0]["icon_url"]}/
